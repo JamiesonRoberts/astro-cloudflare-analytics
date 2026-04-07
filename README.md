@@ -39,7 +39,7 @@ import { CloudflareAnalytics } from 'astro-cloudflare-analytics'
 </html>
 ```
 
-### Props for `CloudflareWebAnalyticsProvider`
+### Props for `CloudflareAnalytics`
 
 | Name          | Type     | Description                                                                                                                                                                                         |
 |---------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
