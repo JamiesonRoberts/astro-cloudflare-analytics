@@ -14,7 +14,7 @@ analytics and performance metrics service.
 
 ### Installation
 
-`npm install next-cloudflare-web-analytics --save`
+`npm install astro-cloudflare-analytics --save`
 
 ### Implementation
 
