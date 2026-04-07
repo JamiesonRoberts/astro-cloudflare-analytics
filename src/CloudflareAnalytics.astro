@@ -1,0 +1,25 @@
+---
+interface Props {
+  token: string
+  partytown?: boolean
+  spaIsDisabled?: boolean
+}
+
+const { token = '', partytown = false, spaIsDisabled = false } = Astro.props
+
+const attrs = partytown ? { type: 'text/partytown' } : {}
+
+const beacon: { token: string; spa?: boolean } = {
+  token: token,
+}
+if (spaIsDisabled) {
+  beacon.spa = false
+}
+---
+
+<script
+  is:inline
+  defer
+  src='https://static.cloudflareinsights.com/beacon.min.js'
+  data-cf-beacon={JSON.stringify(beacon)}
+  {...attrs}></script>

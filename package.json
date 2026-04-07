@@ -1,0 +1,36 @@
+{
+  "name": "astro-cloudflare-analytics",
+  "description": "An Astro component to handle manual Cloudflare Analytics installation",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "version": "0.0.1",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "files": [
+    "src",
+    "index.ts"
+  ],
+  "keywords": [
+    "astro-component",
+    "withastro",
+    "cloudflare",
+    "analytics",
+    "web analytics",
+    "simple analytics",
+    "privacy focused analytics",
+    "cloudflare web analytics",
+    "cloudflare analytics"
+  ],
+  "scripts": {},
+  "devDependencies": {
+    "astro": "^6.1.4",
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1"
+  },
+  "peerDependencies": {
+    "astro": "^5.0.0 || ^6.0.0"
+  }
+}
