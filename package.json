@@ -13,6 +13,10 @@
     "src",
     "index.ts"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JamiesonRoberts/astro-cloudflare-analytics/.git"
+  },
   "keywords": [
     "astro-component",
     "withastro",
@@ -24,6 +28,12 @@
     "cloudflare web analytics",
     "cloudflare analytics"
   ],
+  "author": "Jamieson Roberts <hello@jamiesonroberts.com>",
+  "license": "GPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/JamiesonRoberts/astro-cloudflare-analytics//issues"
+  },
+  "homepage": "https://github.com/JamiesonRoberts/astro-cloudflare-analytics/#readme",
   "scripts": {},
   "devDependencies": {
     "astro": "^6.1.4",

@@ -1,35 +1,48 @@
-# Astro Starter Kit: Component Package
+# Astro Cloudflare Analytics &middot;
 
-This is a template for an Astro component library. Use this template for writing components to use in multiple projects or publish to NPM.
+Simple Integration for Astro (https://astro.build/) and Cloudflare Web
+Analytics (https://www.cloudflare.com/web-analytics). Cloudflare Web Analytics is a simple and lightweight privacy-first
+analytics and performance metrics service.
 
-```sh
-npm create astro@latest -- --template component
+[Cloudflare Web Analytics Overview](https://developers.cloudflare.com/analytics/web-analytics/)
+
+> Cloudflare Web Analytics provides free, privacy-first analytics for your website... All you need to enable
+> Cloudflare Web Analytics is a Cloudflare account and a JavaScript snippet on your page to start getting information
+> on page views and visitors.
+
+## Usage
+
+### Installation
+
+`npm install next-cloudflare-web-analytics --save`
+
+### Implementation
+
+Include the following wherever in your project you are handling the websites `<head>` tag and any related content. The following is an example with a site layout file.
+
+```astro
+// src/layourts/Layout.astro
+
+---
+import { CloudflareAnalytics } from 'astro-cloudflare-analytics'
+---
+
+<!doctype html>
+<html lang='en-CA'>
+  <head>
+    ...
+    <CloudflareAnalytics token='XXXXXXXXXXXXXXXXXX' />
+  </head>
+  <body>
+  ...
+  </body>
+</html>
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/non-html-pages)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/non-html-pages)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/component/devcontainer.json)
+### Props for `CloudflareWebAnalyticsProvider`
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── index.ts
-├── src
-│   └── MyComponent.astro
-├── tsconfig.json
-├── package.json
-```
-
-The `index.ts` file is the "entry point" for your package. Export your components in `index.ts` to make them importable from your package.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command       | Action                                                                                                                                                                                                                           |
-| :------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `npm link`    | Registers this package locally. Run `npm link my-component-library` in an Astro project to install your components                                                                                                               |
-| `npm publish` | [Publishes](https://docs.npmjs.com/creating-and-publishing-unscoped-public-packages#publishing-unscoped-public-packages) this package to NPM. Requires you to be [logged in](https://docs.npmjs.com/cli/v8/commands/npm-adduser) |
+| Name          | Type     | Description                                                                                                                                                                                         |
+|---------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| token         | string   | The token provided by Cloudflare Web Analytics of the site you want to monitor. **Required**                                                                                                        |
+| spaIsDisabled | boolean? | Set this to `true` to disable Cloudflare Web Analytics [Single Page Application measurements](https://developers.cloudflare.com/analytics/web-analytics/getting-started/web-analytics-spa/).        |
+| partytown     | boolean? | Set this to `true` to enable the script to be flagged to load via Partytown and Astro's web worker framework. [Partytown Details](https://docs.astro.build/en/guides/integrations-guide/partytown/) |
